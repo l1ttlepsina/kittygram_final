@@ -62,4 +62,4 @@ jobs:
         with:
           context: ./backend/
           push: true
-          tags: ваш-логин-на-docker-hub/taski_backend:latest 
+          tags: psina/kittygram_final_backend:latest 
