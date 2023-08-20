@@ -41,7 +41,24 @@ jobs:
       run: |
         python -m flake8 backend/
         cd backend/
-        python manage.py test 
+        python manage.py test
+
+    runs-on: ubuntu-latest
+    needs: set_up_env
+    steps:
+      - name: executing remote ssh commands to set env
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            export DB_NAME=${{ secrets.DB_NAME }}
+            export POSTGRES_USER=${{ secrets.POSTGRES_USER }}
+            export POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
+            export DB_HOST=${{ secrets.DB_HOST }}
+            export DB_PORT=${{ secrets.DB_PORT }}
+            export SECRET_KEY=${{ secrets.SECRET_KEY }}
 
   build_and_push_to_docker_hub:
     name: Push Docker image to DockerHub
