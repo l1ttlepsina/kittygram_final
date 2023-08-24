@@ -1,6 +1,0 @@
-fkdegojgfe'kittygram_final_gatewaynsdklvn
-validationsdvs
-dvvs
-dvsd
-validationsdvsd
-env_file
