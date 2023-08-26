@@ -107,7 +107,7 @@ jobs:
         with:
           context: ./frontend/
           push: true
-          tags: psina/kittygram_final_frontend:latest
+          tags: psina/kittygram_frontend:latest
 
   build_gateway_and_push_to_docker_hub:
     name: Push gateway Docker image to DockerHub
@@ -127,7 +127,7 @@ jobs:
         with:
           context: ./nginx/
           push: true
-          tags: psina/kittygram_final_gateway:latest
+          tags: psina/kittygram_gateway:latest
   
   deploy:
     runs-on: ubuntu-latest

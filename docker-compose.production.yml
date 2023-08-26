@@ -20,13 +20,13 @@ services:
     depends_on:
       - db
   frontend:
-    image:  psina/kittygram_final_frontend
+    image:  psina/kittygram_frontend
     env_file: .env
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - static_volume:/frontend_static
   gateway:
-    image: psina/kittygram_final_gateway
+    image: psina/kittygram_gateway
     env_file: .env
     ports:
       - 9000:80
