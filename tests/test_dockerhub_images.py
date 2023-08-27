@@ -41,3 +41,4 @@ def test_dockerhub_images_exist(
             'Убедитесь, что в вашем DockerHub-аккаунте доступен образ '
             f'`{image}`. Образ должен быть публичным.'
         )
+
