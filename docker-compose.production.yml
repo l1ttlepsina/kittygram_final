@@ -20,7 +20,7 @@ services:
     depends_on:
       - db
   frontend:
-    image:  psina/kittygram_frontend:latest
+    image: psina/kittygram_frontend:latest
     env_file: .env
     command: cp -r /app/build/. /frontend_static/
     volumes:
